@@ -103,7 +103,6 @@ class MainController extends Controller
         $user->delete();
 
         return 'data '.$user.' has been deleted';
-    }// add
-
+    }// delete
 
 }

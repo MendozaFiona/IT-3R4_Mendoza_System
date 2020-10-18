@@ -31,6 +31,7 @@ Route::get('/users', 'MainController@getUsers');
 //index
 Route::get('/', 'MainController@index');
 Route::post('/', 'MainController@add');
+Route::get('/login', 'LoginController@login');
 Route::get('/{id}', 'MainController@show');
 Route::put('/{id}', 'MainController@update');
 Route::patch('/{id}', 'MainController@update');
