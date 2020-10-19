@@ -94,6 +94,9 @@ class MainController extends Controller
 
         }// switch
 
+        $user->fill($request->all());
+        $user->save();
+
         return 'data updated as '.$user;
 
     }// update
