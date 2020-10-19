@@ -20,8 +20,37 @@ class LoginController extends Controller
         return view('page.login');
     }
 
-    public function message(){
-        return 'success'; //matters if successful or not
+    public function result(){
+
+        $username = $_GET["uname"];
+        $password = $_GET["psw"];
+
+        $result = Main::all();
+        $match = false;
+
+        if(empty($result)){
+            return "Empty!";
+        }
+
+        foreach($result as $r){
+            $user = $r->username;
+
+            if($user == $username){
+                $pass = $r->password;
+
+                if($pass == $password){
+                    $match = true;
+                    return "You are logged in";
+                    break;
+                }// if pass
+                
+            }// if user
+
+        }// foreach
+
+        if($match == false){
+            return "Incorrect Credentials!";
+        }
     }
 
 }
